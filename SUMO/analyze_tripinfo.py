@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
+import os
 
 def parse_tripinfo(file):
     tree = ET.parse(file)
@@ -37,6 +38,7 @@ def main():
     plt.title("Statistik Hasil Simulasi")
     plt.ylabel("Detik")
     plt.tight_layout()
+    os.makedirs("images", exist_ok=True)
     plt.savefig("images/hasil_simulasi.png")
     plt.show()
 

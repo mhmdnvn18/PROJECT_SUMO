@@ -1,34 +1,47 @@
 # SUMO Traffic Simulation
 
-## Deskripsi
-Proyek ini menggunakan SUMO (Simulation of Urban MObility) untuk simulasi lalu lintas berbasis peta OSM. Termasuk skrip traffic light adaptif dan analisis hasil simulasi.
+Simulasi lalu lintas menggunakan SUMO berbasis peta OSM, dengan lampu lalu lintas adaptif dan analisis hasil simulasi.
+
+---
 
 ## Struktur File
+
 - `map.sumocfg` : Konfigurasi utama simulasi
 - `map.rou.xml` : Rute kendaraan
 - `map.poly.xml` : Poligon peta
 - `tripinfo.xml` : Output statistik perjalanan
 - `adaptive_traffic_light.py` : Skrip lampu lalu lintas adaptif
-- `analyze_tripinfo.py` : Analisis statistik hasil simulasi
+- `analyze_tripinfo.py` : Analisis hasil simulasi
+- `images/hasil_simulasi.png` : Visualisasi hasil analisis
 
-## Menjalankan Simulasi
-1. Pastikan SUMO dan Python sudah terpasang.
-2. Jalankan traffic light adaptif:
-   ```
+---
+
+## Cara Menjalankan
+
+1. **Persiapan**
+   - Pastikan SUMO dan Python sudah terpasang.
+   - Pastikan file jaringan (`map.sumocfg` dan dependensinya) sudah tersedia.
+
+2. **Jalankan Simulasi Lampu Lalu Lintas Adaptif**
+   ```bash
    python adaptive_traffic_light.py
    ```
-   Ini akan menjalankan SUMO GUI dan menghasilkan `tripinfo.xml`.
+   - Akan menjalankan SUMO GUI dan menghasilkan file `tripinfo.xml`.
 
-3. Analisis hasil simulasi:
-   ```
+3. **Analisis Hasil Simulasi**
+   ```bash
    python analyze_tripinfo.py
    ```
-   Akan menampilkan statistik rata-rata waktu tempuh dan tunggu, serta menyimpan grafik ke `hasil_simulasi.png`.
+   - Akan menampilkan statistik rata-rata waktu tempuh dan tunggu.
+   - Grafik hasil disimpan di folder `images/hasil_simulasi.png`.
+
+---
 
 ## Catatan
-- Pastikan file jaringan (`map.sumocfg` dan dependensinya) sudah benar.
-- Untuk menambah lampu lalu lintas, gunakan netedit pada jaringan SUMO.
+
+- Jika tidak ada lampu lalu lintas, tambahkan terlebih dahulu menggunakan netedit SUMO.
 - Output statistik dapat dilihat pada file `tripinfo.xml` dan visualisasi PNG.
+- Folder `images` akan dibuat otomatis jika belum ada.
 
 ---
 
