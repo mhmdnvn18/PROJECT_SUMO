@@ -1,3 +1,79 @@
+# SUMO Traffic Simulation Project
+
+## Deskripsi
+
+Proyek ini berisi file-file yang digunakan untuk melakukan simulasi lalu lintas menggunakan SUMO (Simulation of Urban MObility) dengan data peta dari OpenStreetMap (OSM). Simulasi ini dapat digunakan untuk menganalisis pergerakan kendaraan pada area tertentu berdasarkan data jaringan jalan yang diimpor dari OSM.
+
+## Struktur File
+
+- `map.osm` : Data peta hasil ekspor dari OpenStreetMap.
+- `test.net.xml` : Jaringan jalan hasil konversi dari OSM ke format SUMO.
+- `map.sumocfg` : File konfigurasi utama simulasi SUMO.
+- `map.rou.xml` : File rute kendaraan (routes).
+- `map.poly.xml` : File poligon (misal: bangunan, taman, air, dll).
+- `typemap.xml` : Tipe poligon untuk visualisasi di SUMO.
+- `osmNetconvert.typ.xml` : Tipe jaringan untuk konversi OSM ke SUMO.
+- `randomTrips.py` : Skrip untuk menghasilkan perjalanan acak (random trips).
+- `trips.trips.xml` : File hasil generate trip acak.
+- `README.MD` : Dokumentasi dan petunjuk penggunaan.
+
+## Cara Menggunakan
+
+### 1. Persiapan Data
+
+- Ekspor area peta dari [openstreetmap.org](https://www.openstreetmap.org/export) dan simpan sebagai `map.osm`.
+
+### 2. Konversi OSM ke SUMO Network
+
+Jalankan perintah berikut untuk mengkonversi file OSM ke jaringan SUMO:
+
+```bash
+netconvert --osm-files map.osm -o test.net.xml --type-files osmNetconvert.typ.xml
+```
+
+### 3. Generate Poligon (Opsional)
+
+Jika ingin menampilkan bangunan, taman, dan fitur lain:
+
+```bash
+polyconvert --net-file test.net.xml --osm-files map.osm --type-file typemap.xml -o map.poly.xml
+```
+
+### 4. Generate Rute Kendaraan
+
+Bisa menggunakan skrip randomTrips.py atau SUMO tools:
+
+```bash
+python randomTrips.py
+# atau dengan sumo/tools/randomTrips.py
+python <SUMO_TOOLS_PATH>/randomTrips.py -n test.net.xml -o trips.trips.xml
+```
+
+### 5. Jalankan Simulasi
+
+Edit file `map.sumocfg` agar mengarah ke file network, route, dan poly yang sesuai.
+
+Jalankan simulasi dengan SUMO GUI:
+
+```bash
+sumo-gui -c map.sumocfg
+```
+
+### 6. Visualisasi
+
+SUMO GUI akan menampilkan simulasi lalu lintas sesuai konfigurasi.
+
+## Referensi
+
+- [SUMO Documentation](https://sumo.dlr.de/docs/)
+- [Importing OSM Data](https://sumo.dlr.de/docs/Networks/Import/OpenStreetMap.html)
+- [SUMO Tools](https://sumo.dlr.de/docs/Tools/)
+
+---
+
+**Catatan:**  
+Pastikan semua file berada dalam satu folder kerja dan path file pada konfigurasi sudah benar.
+
 # Cara Membuat Network dan Simulasi Random Traffic pada SUMO
 
 ## 1. Ekspor Peta dari OpenStreetMap
