@@ -195,4 +195,65 @@ Simulasi lampu lalu lintas adaptif berbasis IoT menggunakan SUMO & TraCI. Skrip 
 - Pastikan dependensi Python (misal: `matplotlib`) sudah terinstall.
 - File `tripinfo.xml` akan kosong jika simulasi belum dijalankan atau tidak ada kendaraan.
 
+# Troubleshooting & Perbaikan Simulasi SUMO
+
+## Rangkuman Masalah Umum
+
+| Masalah | Penyebab | Dampak |
+|---------|----------|--------|
+| Tidak ada lampu lalu lintas (TLS) | Belum ditambahkan ke jaringan di test.net.xml | Kendaraan tidak dikendalikan fase, atau macet di persimpangan |
+| Rata-rata waktu tempuh sangat tinggi | Kendaraan tidak bergerak karena stuck | Rata-rata 6200 detik waktu tempuh & 5900 detik waktu tunggu |
+| Jaringan terlalu kompleks/edge tidak nyambung | Banyak edge panjang/tidak tersambung | Kendaraan berputar/berhenti total |
+| Terlalu banyak kendaraan | randomTrips.py menghasilkan >100 kendaraan | Kepadatan ekstrem, kemacetan parah |
+| Durasi simulasi terlalu panjang | end=1000 terlalu lama | Tidak efisien saat debugging |
+
+## Langkah Perbaikan
+
+1. **Tambahkan Traffic Light (TLS)**
+   - Buka `test.net.xml` di netedit.
+   - Klik node persimpangan, pilih "Add Traffic Light".
+   - Simpan ulang file.
+
+2. **Ubah Jumlah Kendaraan**
+   - Jalankan ulang randomTrips.py dengan:
+     ```
+     python randomTrips.py --number 20 --end 300
+     ```
+   - Ini mengurangi kepadatan.
+
+3. **Uji Coba dengan Fixed Time**
+   - Jalankan simulasi biasa di sumo-gui.
+   - Pastikan kendaraan bergerak lancar sebelum mencoba adaptif.
+
+4. **Batasi Durasi Simulasi**
+   - Edit `map.sumocfg`, ubah:
+     ```xml
+     <end value="300"/>
+     ```
+   - Simulasi lebih singkat, mudah debug.
+
+5. **Pastikan Edge Terhubung**
+   - Buka jaringan di netedit.
+   - Pastikan setiap edge punya jalur keluar (tidak buntu).
+
+6. **Tambahkan Phase Durations**
+   - Setelah TLS ditambahkan, atur fase (misal NS hijau 30 detik, EW hijau 30 detik).
+
+## Peningkatan Disarankan
+
+- Tambahkan 2 skenario: Fixed vs Adaptive.
+- Gunakan matplotlib untuk membandingkan grafik bar fixed vs adaptive.
+- Dokumentasikan ID TLS dan fase untuk logika Python lebih presisi.
+- Buat file konfigurasi `.sumocfg` terpisah untuk tiap skenario.
+
+## File yang Perlu Diperbarui/Diperiksa
+
+| File                | Tindakan                                              |
+|---------------------|------------------------------------------------------|
+| test.net.xml        | Tambahkan lampu lalu lintas (netedit), simpan ulang   |
+| randomTrips.py      | Jalankan ulang dengan --number 20                     |
+| map.sumocfg         | Tambahkan tripinfo.xml, ubah <end> ke 300             |
+| adaptive_traffic_light.py | Pastikan TLS tersedia di jaringan               |
+| tripinfo.xml        | Akan berubah setelah simulasi diperbaiki              |
+
 ---

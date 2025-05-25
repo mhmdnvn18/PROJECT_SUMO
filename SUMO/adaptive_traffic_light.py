@@ -23,18 +23,18 @@ def run():
             lanes = traci.trafficlight.getControlledLanes(tls_id)
             lane_vehicle_counts = [traci.lane.getLastStepVehicleNumber(lane) for lane in lanes]
             total_vehicles = sum(lane_vehicle_counts)
+            max_lane_vehicles = max(lane_vehicle_counts) if lane_vehicle_counts else 0
 
-            current_phase = traci.trafficlight.getPhase(tls_id)
+            # Update lebih sering, misal setiap 5 detik
+            if step % 5 == 0:  # Setiap 5 detik simulasi
+                print(f"[{step}s] {tls_id} total kendaraan: {total_vehicles}, antrean terpanjang: {max_lane_vehicles}")
 
-            if step % 10 == 0:  # Setiap 10 detik simulasi
-                print(f"[{step}s] {tls_id} total kendaraan: {total_vehicles}")
-
-                if total_vehicles > 10:
-                    # Jika padat, tambah durasi hijau
-                    traci.trafficlight.setPhaseDuration(tls_id, 40)
+                if max_lane_vehicles > 8:
+                    # Jika antrean panjang, tambah durasi hijau lebih banyak
+                    traci.trafficlight.setPhaseDuration(tls_id, 45)
                 elif total_vehicles < 3:
-                    # Jika sepi, kurangi durasi
-                    traci.trafficlight.setPhaseDuration(tls_id, 15)
+                    # Jika sepi, kurangi durasi hijau
+                    traci.trafficlight.setPhaseDuration(tls_id, 10)
                 else:
                     # Normal
                     traci.trafficlight.setPhaseDuration(tls_id, 25)
