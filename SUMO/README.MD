@@ -144,3 +144,55 @@ Pastikan semua file berada dalam satu folder kerja dan path file pada konfiguras
       </time>
   </sumoConfiguration>
   ```
+
+# Adaptive Traffic Light Simulation and Analysis in SUMO
+
+## Deskripsi
+Simulasi lampu lalu lintas adaptif berbasis IoT menggunakan SUMO & TraCI. Skrip Python mengontrol lampu lalu lintas secara real-time berdasarkan jumlah kendaraan, lalu menganalisis hasil perjalanan kendaraan dari file `tripinfo.xml`.
+
+## Langkah-langkah Menjalankan Simulasi
+
+1. **Siapkan Jaringan dan Rute**
+   - Pastikan file jaringan (`map.sumocfg`, `test.net.xml`, dll) dan rute (`map.rou.xml` atau `trips.trips.xml`) sudah tersedia.
+   - Jika belum ada lampu lalu lintas, tambahkan menggunakan Netedit.
+
+2. **Jalankan Simulasi Lampu Adaptif**
+   - Pastikan SUMO dan TraCI sudah terinstall.
+   - Jalankan perintah berikut di terminal:
+     ```
+     python adaptive_traffic_light.py
+     ```
+   - Simulasi akan berjalan dan menghasilkan file `tripinfo.xml`.
+
+3. **Analisis Hasil Simulasi**
+   - Setelah simulasi selesai, jalankan:
+     ```
+     python analyze_tripinfo.py
+     ```
+   - Statistik rata-rata waktu tempuh dan waktu tunggu akan ditampilkan.
+   - Grafik perbandingan otomatis disimpan sebagai `hasil_simulasi.png`.
+
+## Penjelasan Skrip
+
+- **adaptive_traffic_light.py**  
+  Mengontrol lampu lalu lintas adaptif. Jika kendaraan di lajur banyak, durasi hijau diperpanjang. Jika sedikit, dipersingkat. TraCI digunakan untuk kontrol real-time.
+
+- **analyze_tripinfo.py**  
+  Membaca `tripinfo.xml`, menghitung rata-rata waktu tempuh dan tunggu, serta membuat grafik perbandingan.
+
+## Studi Kasus & Tujuan
+- **Masalah:** Kemacetan di simpang padat akibat lampu konvensional yang tidak adaptif.
+- **Solusi:** Lampu adaptif berbasis deteksi kendaraan (IoT/IoV) memperpanjang hijau jika antrean panjang.
+- **Eksperimen:** Bandingkan performa lampu tetap vs adaptif menggunakan metrik waktu tempuh dan tunggu rata-rata.
+
+## File Penting
+- `adaptive_traffic_light.py`
+- `analyze_tripinfo.py`
+- `tripinfo.xml`
+- `hasil_simulasi.png`
+
+## Catatan
+- Pastikan dependensi Python (misal: `matplotlib`) sudah terinstall.
+- File `tripinfo.xml` akan kosong jika simulasi belum dijalankan atau tidak ada kendaraan.
+
+---
