@@ -28,6 +28,7 @@ def get_controlled_lanes(tls_id):
     return lane_ids
 
 def run():
+    sumo_cmd = ["sumo-gui", "-c", "map.sumocfg", "--tripinfo-output", "tripinfo_control.xml"]
     traci.start(sumo_cmd)
     tls_id = "tl_1"  # Ganti sesuai ID lampu lalu lintas di jaringan Anda
     step = 0
@@ -42,6 +43,19 @@ def run():
 
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
+        # Contoh: deteksi kendaraan IoT-enabled di setiap edge
+        for edge in traci.edge.getIDList():
+            veh_ids = traci.edge.getLastStepVehicleIDs(edge)
+            iot_count = 0
+            for vid in veh_ids:
+                try:
+                    vtype = traci.vehicle.getTypeID(vid)
+                    if vtype == "iot":
+                        iot_count += 1
+                except traci.TraCIException:
+                    continue
+            # Data iot_count dapat digunakan untuk logika kontrol lampu
+
         step += 1
 
         if step % 5 == 0:

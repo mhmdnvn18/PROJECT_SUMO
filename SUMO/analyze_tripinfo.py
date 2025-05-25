@@ -18,9 +18,12 @@ def parse_tripinfo(file):
 def main():
     print("Pilih file tripinfo yang ingin dianalisis:")
     print("1. tripinfo_adaptive.xml (lampu adaptif)")
-    print("2. tripinfo_qlearning.xml (Q-Learning)")
-    pilihan = input("Masukkan nomor [1/2] (default 1): ").strip()
+    print("2. tripinfo_control.xml (kontrol manual/otomatis)")
+    print("3. tripinfo_qlearning.xml (Q-Learning)")
+    pilihan = input("Masukkan nomor [1/2/3] (default 1): ").strip()
     if pilihan == "2":
+        file = "tripinfo_control.xml"
+    elif pilihan == "3":
         file = "tripinfo_qlearning.xml"
     else:
         file = "tripinfo_adaptive.xml"

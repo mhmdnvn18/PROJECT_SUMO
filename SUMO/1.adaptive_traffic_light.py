@@ -1,7 +1,7 @@
 import traci
 
 def run():
-    # Jalankan SUMO GUI dengan output tripinfo_adaptive.xml
+    # Jalankan SUMO GUI dengan output tripinfo_adaptive.xml saja
     sumo_cmd = ["sumo-gui", "-c", "map.sumocfg", "--tripinfo-output", "tripinfo_adaptive.xml"]
     traci.start(sumo_cmd)
 
@@ -18,6 +18,20 @@ def run():
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
         step += 1
+
+        # Deteksi kendaraan IoT-enabled di setiap edge
+        for edge in traci.edge.getIDList():
+            veh_ids = traci.edge.getLastStepVehicleIDs(edge)
+            iot_count = 0
+            for vid in veh_ids:
+                try:
+                    vtype = traci.vehicle.getTypeID(vid)
+                    if vtype == "iot":
+                        iot_count += 1
+                except traci.TraCIException:
+                    continue
+            # Data iot_count dapat digunakan untuk pengambilan keputusan lampu lalu lintas
+            # print(f"Edge {edge} ada {iot_count} kendaraan IoT-enabled")
 
         for tls_id in tls_ids:
             lanes = traci.trafficlight.getControlledLanes(tls_id)

@@ -38,6 +38,13 @@
 -->
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Tipe kendaraan IoT-enabled -->
+    <vType id="iot" accel="1.0" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="25" color="0,255,0"/>
+
+    <!-- Contoh kendaraan IoT-enabled -->
+    <vehicle id="veh_iot_1" type="iot" depart="10" from="edge1" to="edge3"/>
+    <vehicle id="veh_iot_2" type="iot" depart="30" from="edge2" to="edge4"/>
+
     <vehicle id="0" depart="0.00">
         <route edges="518974807#2 518974807#3 518974807#4 467228962 1064294858#0 1064294858#1 -131473132#1 -131473132#0 131473123#2 131473123#3 1068234511#1 1068234511#2 1064294853 413949759 413949757#0 413949757#1 306275221#0 306275221#1 -763092075#1"/>
     </vehicle>

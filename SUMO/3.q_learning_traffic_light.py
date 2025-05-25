@@ -60,6 +60,21 @@ def run():
 
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
+        # Deteksi kendaraan IoT-enabled di setiap edge (bisa dipakai sebagai state Q-Learning)
+        iot_counts = {}
+        for edge in traci.edge.getIDList():
+            veh_ids = traci.edge.getLastStepVehicleIDs(edge)
+            iot_count = 0
+            for vid in veh_ids:
+                try:
+                    vtype = traci.vehicle.getTypeID(vid)
+                    if vtype == "iot":
+                        iot_count += 1
+                except traci.TraCIException:
+                    continue
+            iot_counts[edge] = iot_count
+        # iot_counts dapat digunakan sebagai bagian dari state Q-Learning
+
         step += 1
         phase_timer += 1
 
