@@ -1,8 +1,8 @@
 import traci
 
 def run():
-    # Jalankan SUMO GUI dengan output tripinfo.xml
-    sumo_cmd = ["sumo-gui", "-c", "map.sumocfg", "--tripinfo-output", "tripinfo.xml"]
+    # Jalankan SUMO GUI dengan output tripinfo_adaptive.xml
+    sumo_cmd = ["sumo-gui", "-c", "map.sumocfg", "--tripinfo-output", "tripinfo_adaptive.xml"]
     traci.start(sumo_cmd)
 
     tls_ids = traci.trafficlight.getIDList()

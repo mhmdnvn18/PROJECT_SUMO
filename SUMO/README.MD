@@ -362,3 +362,40 @@ Contoh definisi tipe kendaraan di file rute (.rou.xml):
 Pastikan kita punya minimal beberapa kendaraan (setidaknya 3–5 unit) yang nantinya akan terhubung ke pengaturan lampu melalui TraCI.
 
 ---
+
+# SUMO Traffic Simulation
+
+## Penjelasan File Simulasi
+
+Berikut adalah perbedaan dan urutan penggunaan file simulasi utama:
+
+### 0.randomTrips.py
+Digunakan untuk menghasilkan file perjalanan/rute acak (trips) yang akan digunakan sebagai input kendaraan pada simulasi SUMO.
+
+### 1.adaptive_traffic_light.py
+Menjalankan simulasi SUMO dengan pengaturan lampu lalu lintas adaptif berbasis aturan sederhana (rule-based). Biasanya menggunakan logika seperti memperpanjang lampu hijau jika antrian kendaraan panjang, tanpa pembelajaran mesin.
+
+### 2.traffic_control.py
+Menjalankan simulasi SUMO dengan kontrol lampu lalu lintas manual atau otomatis sesuai logika yang Anda buat sendiri. Bisa berupa pengaturan siklus tetap, pengaturan waktu lampu, atau logika lain yang tidak adaptif maupun AI.
+
+### 3.q_learning_traffic_light.py
+Menjalankan simulasi SUMO dengan pengaturan lampu lalu lintas menggunakan algoritma Q-Learning (AI). Sistem belajar dari pengalaman simulasi untuk mengoptimalkan pengaturan lampu berdasarkan reward (misal: meminimalkan waktu tunggu kendaraan).
+
+---
+
+## Urutan Penggunaan
+
+1. Jalankan `0.randomTrips.py` untuk membuat rute kendaraan.
+2. Jalankan salah satu dari:
+   - `1.adaptive_traffic_light.py` (lampu adaptif rule-based)
+   - `2.traffic_control.py` (kontrol manual/otomatis)
+   - `3.q_learning_traffic_light.py` (kontrol AI Q-Learning)
+   sesuai metode kontrol lampu yang diinginkan.
+
+---
+
+## Ringkasan Perbedaan
+
+- **1.adaptive_traffic_light.py**: Aturan adaptif sederhana (rule-based).
+- **2.traffic_control.py**: Kontrol manual/otomatis, logika bebas.
+- **3.q_learning_traffic_light.py**: Kontrol berbasis AI (Q-Learning).

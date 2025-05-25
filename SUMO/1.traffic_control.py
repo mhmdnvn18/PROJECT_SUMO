@@ -4,8 +4,8 @@ import sys
 
 # Path ke executable SUMO; bisa menggunakan sumo-gui atau sumo (non-gui)
 SUMO_BINARY = "sumo-gui"  # atau "sumo"
-net_file = "jaringan.net.xml"
-route_file = "jaringan.rou.xml"
+net_file = "map.net.xml"
+route_file = "map.rou.xml"
 sumo_cmd = [SUMO_BINARY, "-n", net_file, "-r", route_file, "--start"]
 
 def get_lane_density(lane_id):
