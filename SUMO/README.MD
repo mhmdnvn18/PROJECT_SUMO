@@ -1,3 +1,37 @@
+# SUMO Traffic Simulation
+
+## Deskripsi
+Proyek ini menggunakan SUMO (Simulation of Urban MObility) untuk simulasi lalu lintas berbasis peta OSM. Termasuk skrip traffic light adaptif dan analisis hasil simulasi.
+
+## Struktur File
+- `map.sumocfg` : Konfigurasi utama simulasi
+- `map.rou.xml` : Rute kendaraan
+- `map.poly.xml` : Poligon peta
+- `tripinfo.xml` : Output statistik perjalanan
+- `adaptive_traffic_light.py` : Skrip lampu lalu lintas adaptif
+- `analyze_tripinfo.py` : Analisis statistik hasil simulasi
+
+## Menjalankan Simulasi
+1. Pastikan SUMO dan Python sudah terpasang.
+2. Jalankan traffic light adaptif:
+   ```
+   python adaptive_traffic_light.py
+   ```
+   Ini akan menjalankan SUMO GUI dan menghasilkan `tripinfo.xml`.
+
+3. Analisis hasil simulasi:
+   ```
+   python analyze_tripinfo.py
+   ```
+   Akan menampilkan statistik rata-rata waktu tempuh dan tunggu, serta menyimpan grafik ke `hasil_simulasi.png`.
+
+## Catatan
+- Pastikan file jaringan (`map.sumocfg` dan dependensinya) sudah benar.
+- Untuk menambah lampu lalu lintas, gunakan netedit pada jaringan SUMO.
+- Output statistik dapat dilihat pada file `tripinfo.xml` dan visualisasi PNG.
+
+---
+
 # SUMO Traffic Simulation Project
 
 ## Deskripsi

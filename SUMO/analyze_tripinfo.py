@@ -37,7 +37,7 @@ def main():
     plt.title("Statistik Hasil Simulasi")
     plt.ylabel("Detik")
     plt.tight_layout()
-    plt.savefig("hasil_simulasi.png")
+    plt.savefig("images/hasil_simulasi.png")
     plt.show()
 
 if __name__ == "__main__":
