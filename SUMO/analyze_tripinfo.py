@@ -16,7 +16,14 @@ def parse_tripinfo(file):
     return durations, waitings
 
 def main():
-    file = "tripinfo.xml"
+    print("Pilih file tripinfo yang ingin dianalisis:")
+    print("1. tripinfo.xml (adaptif)")
+    print("2. tripinfo_qlearning.xml (Q-Learning)")
+    pilihan = input("Masukkan nomor [1/2] (default 1): ").strip()
+    if pilihan == "2":
+        file = "tripinfo_qlearning.xml"
+    else:
+        file = "tripinfo.xml"
     durations, waitings = parse_tripinfo(file)
 
     if not durations:
