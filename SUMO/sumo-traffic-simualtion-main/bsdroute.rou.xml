@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-03-25 11:45:54 by Eclipse SUMO netedit Version 1.22.0
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bus" length="4.50" maxSpeed="16.00" color="yellow" accel="1.8" decel="3.2" sigma="0.6"/>
+    <vType id="emergency" length="4.50" maxSpeed="35.00" color="red" accel="4.0" decel="5.5" sigma="0.2" guiShape="emergency"/>
+    <vType id="passenger" length="4.50" maxSpeed="20.00" color="blue" accel="2.6" decel="4.5" sigma="0.5"/>
+    <vType id="truck" length="4.50" maxSpeed="18.00" color="white" accel="2.0" decel="3.5" sigma="0.7"/>
+
+    <route id="route_east_north" edges="749662140#0 749988360#0 749988360#2"/>
+    <route id="route_east_west" edges="749662140#0 978400303#0 978400303#1"/>
+    <route id="route_north_east" edges="749313693 754598165#2 563175146#1"/>
+    <route id="route_north_south" edges="749313693 754598165#2 757092064#1 757092063"/>
+    <route id="route_north_west" edges="749313693 754598165#2 978400303#0 978400303#1"/>
+    <route id="route_south_east" edges="1053267667#3 563175146#1"/>
+    <route id="route_south_north" edges="1053267667#3 749988360#0 749988360#2"/>
+    <route id="route_south_west" edges="1053267667#3 978400303#0 978400303#1"/>
+    <route id="route_west_east" edges="885403818#0 885403818#1 885403818#2 563175146#1"/>
+    <route id="route_west_south" edges="885403818#0 885403818#1 885403818#2 757092064#1 757092063"/>
+
+    <flow id="flow_bus_en" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_east_north" period="28.00"/>
+    <flow id="flow_bus_ew" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_east_west" period="22.00"/>
+    <flow id="flow_bus_ne" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_north_east" period="25.00"/>
+    <flow id="flow_bus_ns" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_north_south" period="20.00"/>
+    <flow id="flow_bus_nw" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_north_west" period="30.00"/>
+    <flow id="flow_bus_se" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_south_east" period="30.00"/>
+    <flow id="flow_bus_sn" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_south_north" period="20.00"/>
+    <flow id="flow_bus_sw" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_south_west" period="40.00"/>
+    <flow id="flow_bus_we" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_west_east" period="25.00"/>
+    <flow id="flow_bus_ws" type="bus" begin="0.00" departLane="random" departSpeed="0" departPos="free" route="route_west_south" period="35.00"/>
+    <flow id="flow_emergency_en" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_east_north" period="280.00"/>
+    <flow id="flow_emergency_ew" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_east_west" period="220.00"/>
+    <flow id="flow_emergency_ne" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_east" period="250.00"/>
+    <flow id="flow_emergency_ns" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_south" period="200.00"/>
+    <flow id="flow_emergency_nw" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_west" period="300.00"/>
+    <flow id="flow_emergency_se" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_east" period="300.00"/>
+    <flow id="flow_emergency_sn" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_north" period="200.00"/>
+    <flow id="flow_emergency_sw" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_west" period="400.00"/>
+    <flow id="flow_emergency_we" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_west_east" period="250.00"/>
+    <flow id="flow_emergency_ws" type="emergency" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_west_south" period="350.00"/>
+    <flow id="flow_passenger_en" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_east_north" period="6.00"/>
+    <flow id="flow_passenger_ew" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_east_west" period="4.00"/>
+    <flow id="flow_passenger_ne" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_east" period="5.00"/>
+    <flow id="flow_passenger_ns" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_south" period="3.00"/>
+    <flow id="flow_passenger_nw" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_west" period="7.00"/>
+    <flow id="flow_passenger_se" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_east" period="7.00"/>
+    <flow id="flow_passenger_sn" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_north" period="3.00"/>
+    <flow id="flow_passenger_sw" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_west" period="9.00"/>
+    <flow id="flow_passenger_we" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_west_east" period="5.00"/>
+    <flow id="flow_passenger_ws" type="passenger" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_west_south" period="8.00"/>
+    <flow id="flow_truck_en" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_east_north" period="130.00"/>
+    <flow id="flow_truck_ew" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_east_west" period="110.00"/>
+    <flow id="flow_truck_ne" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_east" period="120.00"/>
+    <flow id="flow_truck_ns" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_south" period="100.00"/>
+    <flow id="flow_truck_nw" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_north_west" period="150.00"/>
+    <flow id="flow_truck_se" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_east" period="140.00"/>
+    <flow id="flow_truck_sn" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_north" period="100.00"/>
+    <flow id="flow_truck_sw" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_south_west" period="160.00"/>
+    <flow id="flow_truck_we" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_west_east" period="120.00"/>
+    <flow id="flow_truck_ws" type="truck" begin="0.00" departLane="random" departSpeed="max" departPos="free" route="route_west_south" period="140.00"/>
+</routes>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-03-25 16:02:59 by Eclipse SUMO duarouter Version 1.22.0
+<duarouterConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="osm.net.xml"/>
+        <route-files value="bsdroute.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="test_routes.rou.xml"/>
+        <vtype-output value="vtypes.add.xml"/>
+    </output>
+
+</duarouterConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bus" length="4.50" maxSpeed="16.00" color="yellow" accel="1.8" decel="3.2" sigma="0.6"/>
+    <vType id="emergency" length="4.50" maxSpeed="35.00" color="red" accel="4.0" decel="5.5" sigma="0.2"/>
+    <vType id="passenger" length="4.50" maxSpeed="20.00" color="blue" accel="2.6" decel="4.5" sigma="0.5"/>
+    <vType id="truck" length="4.50" maxSpeed="18.00" color="white" accel="2.0" decel="3.5" sigma="0.7"/>
+</routes>
