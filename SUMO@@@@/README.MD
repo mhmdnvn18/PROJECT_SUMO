@@ -196,6 +196,17 @@ Simulasi lampu lalu lintas adaptif berbasis IoT menggunakan SUMO & TraCI. Skrip 
 
 # Simulasi Lampu Lalu Lintas Adaptif (IoT) dengan SUMO & TraCI
 
+## ▶️ Menjalankan Simulasi:
+```bash
+python adaptive_traffic_light.py
+```
+
+## 📊 Menjalankan Analisis Hasil:
+```bash
+python analyze_tripinfo.py
+```
+Akan muncul grafik dan nilai rata-rata waktu tempuh & waktu tunggu kendaraan.
+
 ## 1. Simulasi Lampu Lalu Lintas Adaptif
 
 Skrip `adaptive_traffic_light.py` mengontrol lampu lalu lintas adaptif menggunakan TraCI. Jalankan SUMO GUI dengan konfigurasi berikut:
@@ -288,5 +299,19 @@ Skrip akan:
 | map.sumocfg         | Tambahkan tripinfo.xml, ubah <end> ke 300             |
 | adaptive_traffic_light.py | Pastikan TLS tersedia di jaringan               |
 | tripinfo.xml        | Akan berubah setelah simulasi diperbaiki              |
+
+## Menambahkan Kendaraan IoT-enabled (Connected Vehicles):
+
+Konsep: Dalam SUMO, “IoT-enabled” dapat direpresentasikan dengan menambahkan kendaraan yang dilengkapi sensor (misal: kemampuan deteksi kepadatan), yang data-nya nantinya dipakai TraCI.
+
+Namun untuk saat ini, cukup definisikan tipe kendaraan biasa di SUMO, karena nanti kita akan memanipulasi melalui TraCI.
+
+Contoh definisi tipe kendaraan di file rute (.rou.xml):
+
+```xml
+<vType id="iot_car" vClass="car" color="1,0,0" accel="2.0" decel="4.5" length="5.0" minGap="2.5" />
+```
+
+Pastikan kita punya minimal beberapa kendaraan (setidaknya 3–5 unit) yang nantinya akan terhubung ke pengaturan lampu melalui TraCI.
 
 ---
