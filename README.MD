@@ -399,3 +399,71 @@ Menjalankan simulasi SUMO dengan pengaturan lampu lalu lintas menggunakan algori
 - **1.adaptive_traffic_light.py**: Aturan adaptif sederhana (rule-based).
 - **2.traffic_control.py**: Kontrol manual/otomatis, logika bebas.
 - **3.q_learning_traffic_light.py**: Kontrol berbasis AI (Q-Learning).
+
+# SUMO Adaptive & Q-Learning Traffic Light Simulation
+
+## Deskripsi Singkat
+Proyek ini mensimulasikan pengaturan lampu lalu lintas menggunakan SUMO (Simulation of Urban MObility) dengan dua pendekatan:
+- **Adaptive Traffic Light:** Pengaturan durasi lampu berdasarkan jumlah kendaraan secara dinamis.
+- **Q-Learning Traffic Light:** Pengaturan lampu menggunakan algoritma reinforcement learning (Q-Learning).
+
+## Cara Menjalankan Simulasi
+
+1. **Jalankan Adaptive Traffic Light:**
+   ```
+   python 1.adaptive_traffic_light.py
+   ```
+
+2. **Jalankan Q-Learning Traffic Light:**
+   ```
+   python 3.q_learning_traffic_light.py
+   ```
+
+3. **Analisis Hasil Simulasi:**
+   ```
+   python analyze_tripinfo.py
+   ```
+
+> Pastikan file `map.sumocfg` dan file jaringan sudah tersedia.
+
+## Penjelasan File Utama
+
+- **1.adaptive_traffic_light.py**  
+  Simulasi lampu lalu lintas adaptif berbasis jumlah kendaraan.
+
+- **3.q_learning_traffic_light.py**  
+  Simulasi lampu lalu lintas menggunakan Q-Learning (reinforcement learning).
+
+- **analyze_tripinfo.py**  
+  Analisis hasil simulasi dari file tripinfo (rata-rata waktu tempuh & tunggu).
+
+- **map.sumocfg, map.net.xml, map.rou.xml, dll**  
+  File konfigurasi dan jaringan SUMO.
+
+## Dependensi
+
+- Python 3.x
+- SUMO (disarankan versi terbaru)
+- traci (`pip install traci`)
+- matplotlib (`pip install matplotlib`)
+
+## Cara Install Dependensi
+
+1. **Install Python:**  
+   Download dari https://www.python.org/
+
+2. **Install SUMO:**  
+   Ikuti petunjuk di https://sumo.dlr.de/docs/Downloads.html
+
+3. **Install library Python:**
+   ```
+   pip install traci matplotlib
+   ```
+
+4. **Pastikan SUMO dan perintah `sumo-gui` dapat diakses dari terminal/cmd.**
+
+---
+
+**Catatan:**  
+- Untuk menjalankan simulasi, pastikan semua file jaringan dan rute sudah benar.
+- Hasil simulasi akan tersimpan di file `tripinfo_adaptive.xml` atau `tripinfo_qlearning.xml` sesuai mode yang dijalankan.
