@@ -467,3 +467,45 @@ Proyek ini mensimulasikan pengaturan lampu lalu lintas menggunakan SUMO (Simulat
 **Catatan:**  
 - Untuk menjalankan simulasi, pastikan semua file jaringan dan rute sudah benar.
 - Hasil simulasi akan tersimpan di file `tripinfo_adaptive.xml` atau `tripinfo_qlearning.xml` sesuai mode yang dijalankan.
+
+# Tutorial Menjalankan Simulasi Traffic Light Optimization SUMO + Q-Learning
+
+## 1. Persiapan
+- Pastikan SUMO dan Python sudah terinstal.
+- Pastikan semua file SUMO (`map.sumocfg`, `map.net.xml`, `map.rou.xml`, dll) sudah tersedia di folder ini.
+- Pastikan sudah menginstall library Python berikut:
+  - `traci`
+  - `numpy`
+  - `matplotlib`
+
+## 2. Menjalankan Simulasi Adaptive Traffic Light (Baseline)
+1. Buka terminal/cmd di folder ini.
+2. Jalankan:
+   ```
+   python 1.adaptive_traffic_light.py
+   ```
+3. SUMO GUI akan terbuka dan simulasi berjalan otomatis.
+4. Hasil perjalanan kendaraan akan tersimpan di `tripinfo_adaptive.xml`.
+
+## 3. Menjalankan Simulasi Q-Learning Traffic Light
+1. Buka terminal/cmd di folder ini.
+2. Jalankan:
+   ```
+   python 3.q_learning_traffic_light.py
+   ```
+3. SUMO GUI akan terbuka dan simulasi berjalan dengan kontrol Q-Learning.
+4. Data hasil simulasi akan tersimpan di:
+   - `tripinfo_qlearning.xml` (statistik perjalanan)
+   - `traffic_signal_data.csv` (log state per step)
+
+## 4. Analisis Hasil Simulasi
+1. Jalankan:
+   ```
+   python analyze_tripinfo.py
+   ```
+2. Pilih file hasil simulasi yang ingin dianalisis (misal: 1 untuk adaptive, 3 untuk Q-Learning).
+3. Statistik rata-rata waktu tempuh dan tunggu akan ditampilkan dan divisualisasikan.
+
+## 5. Catatan
+- Untuk membandingkan performa, bandingkan hasil `tripinfo_adaptive.xml` dan `tripinfo_qlearning.xml`.
+- Anda bisa mengedit file Python untuk eksperimen lebih lanjut (misal: mengubah reward, state, dsb).
