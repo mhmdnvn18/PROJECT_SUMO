@@ -3045,4 +3045,20 @@
     <vehicle id="999" depart="999.00">
         <route edges="518974820#0 518974820#1 518974820#2 518974820#3 302219179 413949759 413949757#0 413949757#1 306275221#0 306275221#1 306275221#2 306275221#3"/>
     </vehicle>
+    <!-- Definisi tipe kendaraan tambahan -->
+    <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="25" color="1,0,0"/>
+    <vType id="bus" accel="1.0" decel="3.0" sigma="0.5" length="12.0" minGap="3.0" maxSpeed="18" color="0,0,1"/>
+    <vType id="truck" accel="0.8" decel="2.5" sigma="0.5" length="8.0" minGap="3.0" maxSpeed="15" color="0,1,0"/>
+    <vType id="iot" accel="2.0" decel="4.5" sigma="0.3" length="5.0" minGap="2.0" maxSpeed="27" color="1,1,0"/>
+
+    <!-- Contoh rute (ganti edge sesuai jaringan Anda) -->
+    <route id="r1" edges="edge1 edge2 edge3"/>
+    <route id="r2" edges="edge3 edge4 edge5"/>
+    <route id="r3" edges="edge2 edge5 edge1"/>
+
+    <!-- Contoh kendaraan -->
+    <vehicle id="car_0" type="car" route="r1" depart="0"/>
+    <vehicle id="bus_0" type="bus" route="r2" depart="10"/>
+    <vehicle id="truck_0" type="truck" route="r3" depart="20"/>
+    <vehicle id="iot_0" type="iot" route="r1" depart="5"/>
 </routes>

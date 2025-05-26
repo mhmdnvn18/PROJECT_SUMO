@@ -15,6 +15,7 @@
 - [x] **File route (.rou.xml) tersedia**: `map.rou.xml`
 - [x] **Minimal 10 kendaraan, rute berbeda**: Sudah ada minimal 10 kendaraan dengan rute berbeda di `map.rou.xml`.
 - [x] **Tipe kendaraan IoT-enabled**: Sudah ditambahkan `<vType id="iot" ...>` dan beberapa kendaraan dengan `type="iot"` di file route.
+- [x] **Variasi kendaraan**: Sudah ada kendaraan IoT, emergency, bus, motor, dan car (lihat contoh di bawah).
 
 ### 4. Simulate IoT-enabled Traffic Management
 - [x] **Implementasi adaptive traffic light**: Ada di `1.adaptive_traffic_light.py` (menggunakan TraCI).
@@ -88,14 +89,5 @@ Menggunakan sistem pengendalian lampu lalu lintas berbasis Q-Learning yang meman
 
 **Catatan:**  
 Semua kriteria sudah dipenuhi.  
-Contoh penambahan kendaraan IoT-enabled di `map.rou.xml`:
+Contoh penambahan kendaraan IoT-enabled dan variasi kendaraan di `map.rou.xml`:
 
-```xml
-<vType id="iot" accel="2.0" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="16.7" color="0,255,0"/>
-<!-- ...existing vType lain... -->
-<vehicle id="iot1" type="iot" route="r1" depart="0"/>
-<vehicle id="iot2" type="iot" route="r2" depart="5"/>
-<!-- ...existing vehicle lain... -->
-```
-
-Jika ingin menambah kendaraan/rute, tambahkan entri `<vehicle ...>` dengan rute berbeda di file tersebut.

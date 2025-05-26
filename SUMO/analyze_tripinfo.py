@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import os
 
 def parse_tripinfo(file):
+    if not os.path.exists(file):
+        print(f"❌ File {file} tidak ditemukan.")
+        return [], []
     tree = ET.parse(file)
     root = tree.getroot()
 
