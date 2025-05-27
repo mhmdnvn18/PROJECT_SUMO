@@ -509,3 +509,61 @@ Proyek ini mensimulasikan pengaturan lampu lalu lintas menggunakan SUMO (Simulat
 ## 5. Catatan
 - Untuk membandingkan performa, bandingkan hasil `tripinfo_adaptive.xml` dan `tripinfo_qlearning.xml`.
 - Anda bisa mengedit file Python untuk eksperimen lebih lanjut (misal: mengubah reward, state, dsb).
+
+# SUMO Traffic Simulation Tutorial
+
+## Membuat Trip dengan Variasi Kendaraan
+
+Script `randomTrips.py` dapat digunakan untuk menghasilkan file trip dengan berbagai tipe kendaraan (passenger, truck, bus, emergency) dan proporsinya bisa diatur.
+
+### Cara Penggunaan
+
+1. **Pastikan dependensi terinstal:**
+   - sumolib, traci, numpy, matplotlib
+
+2. **Jalankan script dengan perintah:**
+   ```
+   python randomTrips.py -n test.net.xml
+   ```
+   Opsi lain:
+   ```
+   python randomTrips.py -n test.net.xml --passenger 60 --truck 20 --bus 15 --emergency 5
+   ```
+
+   - `-n` : file jaringan SUMO (.net.xml)
+   - `--passenger` : persentase kendaraan penumpang
+   - `--truck` : persentase truk
+   - `--bus` : persentase bus
+   - `--emergency` : persentase kendaraan darurat
+
+3. **Output:**
+   - Akan dihasilkan file `trips.trips.xml` dan `vehicle_types.rou.xml`.
+   - Jika ingin langsung membuat file rute, tambahkan `-r map.rou.xml`.
+
+4. **Lanjutkan simulasi dengan file route (`.rou.xml`) yang dihasilkan, bukan file trip langsung.**
+
+---
+
+## Penting: Perbedaan File Trip dan Route
+
+- **trips.trips.xml**: berisi asal-tujuan kendaraan, belum ada rute detail. Tidak bisa langsung dipakai simulasi.
+- **map.rou.xml**: hasil duarouter, berisi rute detail. Ini yang dipakai di simulasi SUMO.
+
+**Selalu gunakan file .rou.xml pada konfigurasi SUMO (`map.sumocfg`).**
+
+---
+
+## Troubleshooting
+
+- Jika muncul error "No route for vehicle ...", pastikan:
+  - Anda sudah generate file route (`-r map.rou.xml`).
+  - File .sumocfg mengacu ke file .rou.xml, bukan trips.trips.xml.
+  - Jaringan (net) Anda memang terhubung antar edge.
+
+---
+
+## Analisis dan Simulasi Lain
+
+- Gunakan `1.adaptive_traffic_light.py` untuk simulasi lampu adaptif.
+- Gunakan `3.q_learning_traffic_light.py` untuk simulasi Q-Learning.
+- Analisis hasil tripinfo dengan `analyze_tripinfo.py`.

@@ -1063,3 +1063,7 @@ if __name__ == "__main__":
     except ValueError as e:
         print("Error:", e, file=sys.stderr)
         sys.exit(1)
+
+# Pastikan untuk menjalankan:
+# python randomTrips.py -n test.net.xml -r map.rou.xml
+# dan gunakan map.rou.xml pada file konfigurasi SUMO (.sumocfg)
