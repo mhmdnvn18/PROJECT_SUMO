@@ -1,3 +1,38 @@
+# Smart Parking Finder System (SUMO)
+
+Sistem ini merupakan simulasi pencarian parkir pintar menggunakan SUMO (Simulation of Urban MObility) dan Python (TraCI).
+
+## Struktur Folder
+
+- `data/` : berisi file jaringan, rute, dan parkir SUMO
+- `main.py` : script utama untuk menjalankan simulasi dan monitoring parkir
+- `requirements.txt` : dependensi Python
+
+## Cara Menjalankan
+
+1. **Install SUMO**  
+   Pastikan SUMO sudah terinstall dan variabel lingkungan `SUMO_HOME` sudah di-set.
+
+2. **Install dependensi Python**
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. **Jalankan simulasi**
+   ```
+   python main.py
+   ```
+
+4. **Output**
+   Status parkir akan tampil di terminal setiap step simulasi.
+
+## Catatan
+
+- File jaringan, rute, dan parkir dapat dimodifikasi pada folder `data/`.
+- Untuk melihat simulasi secara visual, ubah `SUMO_BINARY` di `main.py` menjadi `sumo-gui`.
+
+---
+
 # Smart Parking Finder System
 
 Sistem ini menggunakan SUMO (Simulation of Urban MObility) untuk mensimulasikan dan mencari tempat parkir secara cerdas.

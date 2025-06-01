@@ -4176,6 +4176,7 @@
 <!-- Contoh file rute SUMO minimal -->
 <routes>
     <vType id="car" accel="1.0" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="13.9" guiShape="passenger"/>
-    <route id="route0" edges="1064294858#1 1064294858#2 1064294858#3"/>
-    <vehicle id="veh0" type="car" route="route0" depart="0"/>
+    <route id="r1" edges="1060223615#0 1060223615#1"/>
+    <vehicle id="veh0" type="car" route="r1" depart="0"/>
+    <vehicle id="veh1" type="car" route="r1" depart="10"/>
 </routes>

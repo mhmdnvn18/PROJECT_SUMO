@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-06-01 18:33:13 by Eclipse SUMO netconvert Version 1.23.1
+<!-- generated on 2025-06-02 02:50:51 by Eclipse SUMO netconvert Version 1.23.1
 <netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <osm-files value="map.osm"/>
+        <osm-files value="data/map.osm"/>
     </input>
 
     <output>
-        <output-file value="map.net.xml"/>
+        <output-file value="data/map.net.xml"/>
     </output>
 
     <projection>
         <proj.utm value="true"/>
     </projection>
+
+    <processing>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.guess-signals value="true"/>
+    </tls_building>
 
 </netconvertConfiguration>
 -->
