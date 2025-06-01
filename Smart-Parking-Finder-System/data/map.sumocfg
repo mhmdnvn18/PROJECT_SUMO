@@ -1,15 +1,11 @@
 <configuration>
-  <input>
-    <net-file value="map.net.xml"/>
-    <route-files value="map.rou.xml"/>
-    <additional-files value="parking.add.xml"/>
-    <poly-file value="map.poly.xml"/>
-  </input>
-  <time>
-    <begin value="0"/>
-    <end value="1000"/>
-  </time>
-  <output>
-    <tripinfo-output value="tripinfo.xml"/>
-  </output>
+    <input>
+        <net-file value="map.net.xml"/>
+        <route-files value="map.rou.xml"/>
+        <additional-files value="parking.add.xml"/>
+        <poly-file value="map.poly.xml"/>
+    </input>
+    <output>
+        <tripinfo-output value="tripinfo.xml"/>
+    </output>
 </configuration>

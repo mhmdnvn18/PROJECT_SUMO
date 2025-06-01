@@ -1,6 +1,6 @@
 <additional>
   <!-- Parking Area Pinggir Jalan -->
-  <parkingArea id="P1" lane="1060223615#0_0" startPos="10" endPos="30" roadSide="right" capacity="10"/>
+  <parkingArea id="P1" lane="edge2_0" startPos="0" endPos="20" roadSide="right" capacity="10"/>
   <parkingArea id="P2" lane="1060223615#0_1" startPos="50" endPos="70" roadSide="right" capacity="8"/>
   
   <!-- Car Park Terstruktur -->

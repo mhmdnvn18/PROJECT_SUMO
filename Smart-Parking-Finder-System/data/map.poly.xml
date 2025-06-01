@@ -132,6 +132,9 @@
     <poly>
         <polygon id="park_area" color="0,255,0" layer="0" shape="350,500 360,500 360,510 350,510"/>
     </poly>
+    <poly>
+        <!-- Tambahkan poligon bangunan/taman jika diperlukan -->
+    </poly>
     <polyways>
         <!-- Tambahkan poligon jika diperlukan -->
     </polyways>

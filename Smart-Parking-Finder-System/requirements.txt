@@ -1,5 +1,4 @@
-sumolib
 traci
-numpy
+pandas
 matplotlib
 flask
