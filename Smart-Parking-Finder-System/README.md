@@ -54,6 +54,10 @@ Direktori ini berisi skenario SUMO (Simulation of Urban MObility) untuk simulasi
 
 - Edit file `.xml` untuk mengubah jaringan, tipe kendaraan, rute, area parkir, atau halte bus.
 - Tambahkan atau modifikasi alur pada direktori `rou/` untuk pola lalu lintas yang berbeda.
+- **Mengganti Peta (Network):**
+  1. Buat file jaringan baru (misal: `newmap.net.xml`) menggunakan NETEDIT atau tools SUMO lain.
+  2. Ganti referensi file jaringan pada `random.sumocfg` di bagian `<net-file value="random.net.xml"/>` menjadi nama file jaringan baru Anda.
+  3. Pastikan file rute, area parkir, dan objek lain menyesuaikan dengan struktur jaringan baru.
 
 ## Kebutuhan
 
