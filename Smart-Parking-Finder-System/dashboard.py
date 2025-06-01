@@ -2,7 +2,7 @@ import streamlit as st
 import traci
 import time
 
-SUMO_BINARY = "sumo"
+SUMO_BINARY = "sumo"  # atau "sumo-gui" jika ingin mode GUI
 SUMO_CONFIG = "random.sumocfg"
 
 def get_parking_status():

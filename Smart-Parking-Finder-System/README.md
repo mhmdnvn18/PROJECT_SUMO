@@ -1,13 +1,24 @@
 # Smart Parking Finder System
 Memanfaatkan AIoT untuk Deteksi dan Pencarian Tempat Parkir secara Real-Time
 
----
+## Cara Menjalankan
 
-## Deskripsi Singkat
+Jalankan perintah berikut agar dashboard otomatis menjalankan simulasi SUMO dan menampilkan status parkir:
+```bash
+streamlit run dashboard.py
+```
 
-Sistem ini mensimulasikan pencarian parkir pintar berbasis AIoT menggunakan SUMO. Pengendara dapat menemukan slot parkir kosong secara real-time, status parkir divisualisasikan di dashboard, dan data dapat digunakan untuk prediksi AI.
+> **Catatan:** Tidak perlu menjalankan SUMO secara manual saat menjalankan dashboard.
 
----
+## Checklist File
+- [x] README.md (file ini)
+- [x] dashboard.py (masih kosong, perlu implementasi)
+- [x] random.sumocfg, random.net.xml, parkingArea.add.xml, parkingAreaRerouters.add.xml, busStops.add.xml, basic.vType.xml (beberapa file masih kosong)
+- [x] rou/commercial.rou.xml, rou/passenger.rou.xml, rou/ptw.rou.xml, rou/buses.flows.xml
+- [x] .gitignore
+
+**Catatan:**  
+Beberapa file konfigurasi SUMO dan dashboard.py masih kosong dan perlu diisi sesuai kebutuhan simulasi dan dashboard.
 
 ## Simulasi & Integrasi
 
