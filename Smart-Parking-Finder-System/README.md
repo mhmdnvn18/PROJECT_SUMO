@@ -155,3 +155,25 @@ Sistem simulasi dan dashboard cerdas untuk manajemen parkir berbasis SUMO dan St
 ## Lisensi
 
 MIT License
+
+## Penerapan Sistem IoT dan AI
+
+### Sistem IoT
+- **Simulasi SUMO** digunakan untuk merepresentasikan lingkungan fisik kota, kendaraan, area parkir, dan bus stop secara virtual, layaknya sistem IoT di dunia nyata.
+- **Integrasi TraCI** pada `dashboard.py` berperan sebagai "gateway IoT" yang menghubungkan data real-time dari simulasi (seolah-olah dari sensor IoT) ke dashboard.
+- **Status area parkir** (kosong/penuh/direservasi) diambil secara real-time dari SUMO, menyerupai data sensor IoT pada area parkir fisik.
+- **Reservasi parkir** dan perubahan status area parkir secara real-time juga mensimulasikan interaksi pengguna dengan perangkat IoT (misal: smart parking lock).
+
+### Sistem AI
+- **Prediksi Ketersediaan Parkir**:  
+  Pada `dashboard.py`, fungsi prediksi menggunakan data historis dari database untuk memperkirakan status parkir di jam berikutnya. Ini adalah bentuk penerapan AI sederhana (statistik prediktif).
+- **Analitik Data**:  
+  Dashboard menyediakan analitik tren okupansi parkir dan statistik penggunaan, yang dapat digunakan untuk pengambilan keputusan berbasis data (data-driven decision), bagian dari sistem AI/Smart City.
+- **Pengembangan Lanjutan**:  
+  Sistem prediksi dapat dikembangkan menjadi model machine learning yang lebih kompleks untuk prediksi ketersediaan parkir, pola kemacetan, atau rekomendasi parkir optimal.
+
+---
+
+**Kesimpulan:**  
+- **IoT** diterapkan melalui simulasi sensor dan aktuator area parkir secara real-time menggunakan SUMO dan TraCI.
+- **AI** diterapkan melalui fitur prediksi ketersediaan parkir berbasis data historis dan analitik tren pada dashboard.
