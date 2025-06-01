@@ -129,4 +129,7 @@
     <poi id="6936432809" type="amenity" color="237,199,199" layer="4.00" x="429.68" y="459.14"/>
     <poi id="8385313430" type="shop" color="237,199,255" layer="4.00" x="424.73" y="558.12"/>
     <poi id="8949301534" type="unknown" color="51,128,255" layer="4.00" x="511.47" y="548.10"/>
+    <poly>
+        <polygon id="park_area" color="0,255,0" layer="0" shape="350,500 360,500 360,510 350,510"/>
+    </poly>
 </additional>

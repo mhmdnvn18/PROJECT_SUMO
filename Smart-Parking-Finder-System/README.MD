@@ -1,3 +1,32 @@
+# Smart Parking Finder System
+
+Sistem ini menggunakan SUMO (Simulation of Urban MObility) untuk mensimulasikan dan mencari tempat parkir secara cerdas.
+
+## Instalasi
+
+1. Install SUMO dan Python 3.x.
+2. Install dependensi Python:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Menjalankan Simulasi
+
+1. Jalankan SUMO dengan file jaringan dan rute yang tersedia di folder `data/`.
+2. Jalankan skrip Python utama untuk menghubungkan ke SUMO dan mengelola simulasi parkir.
+
+## Struktur Folder
+
+- `data/` : berisi file jaringan, rute, dan poligon SUMO.
+- `requirements.txt` : dependensi Python.
+- `README.MD` : dokumentasi ini.
+
+## Catatan
+
+Pastikan SUMO sudah terinstall dan path-nya sudah ditambahkan ke environment variable.
+
+---
+
 # Smart Parking Finder System - Simulasi SUMO
 
 Memanfaatkan AIoT untuk Deteksi dan Pencarian Tempat Parkir secara Real-Time
