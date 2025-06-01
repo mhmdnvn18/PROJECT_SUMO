@@ -71,6 +71,18 @@ python scripts/parking_dashboard.py
 ```
 Akses http://localhost:5000
 
+## Generate Random Trips
+
+Untuk menghasilkan file rute acak (`map.rou.xml`) dengan berbagai tipe kendaraan, jalankan perintah berikut dari root project:
+
+```bash
+python data/randomTrips.py -n data/map.net.xml -r data/map.rou.xml \
+  --passenger 70 --truck 20 --bus 10 --emergency 5 \
+  -b 0 -e 3600
+```
+
+Pastikan file `randomTrips.py` ada di folder `data`.
+
 ## Troubleshooting
 
 | Masalah                        | Solusi                                                                 |
