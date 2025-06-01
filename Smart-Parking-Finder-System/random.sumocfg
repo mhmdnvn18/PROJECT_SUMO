@@ -49,3 +49,5 @@
     </random_number>
 
 </configuration>
+
+<!-- Pastikan semua file yang direferensikan ada dan path-nya benar -->

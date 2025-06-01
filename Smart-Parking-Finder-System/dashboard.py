@@ -2,7 +2,7 @@ import streamlit as st
 import traci
 import time
 
-SUMO_BINARY = "sumo"  # atau "sumo-gui" jika ingin mode GUI
+SUMO_BINARY = "sumo-gui"  # Ganti ke "sumo-gui" agar GUI terbuka
 SUMO_CONFIG = "random.sumocfg"
 
 def get_parking_status():
@@ -17,7 +17,17 @@ def main():
     st.write("Status real-time area parkir dari simulasi SUMO")
 
     if st.button("Mulai Simulasi"):
-        traci.start([SUMO_BINARY, "-c", SUMO_CONFIG])
+        connected = False
+        try:
+            # Coba perintah TraCI sederhana untuk memeriksa koneksi
+            traci.getVersion()
+            connected = True
+            st.text("TraCI sudah terhubung.")
+        except Exception:
+            st.text("TraCI tidak terhubung. Memulai TraCI...")
+            traci.start([SUMO_BINARY, "-c", SUMO_CONFIG])
+            connected = True
+        st.text(f"Terhubung: {connected}")
         placeholder = st.empty()
         try:
             while traci.simulation.getMinExpectedNumber() > 0:
@@ -29,8 +39,13 @@ def main():
         except Exception as e:
             st.error(f"Error: {e}")
         finally:
-            traci.close()
+            try:
+                traci.close()
+            except Exception:
+                pass
             st.success("Simulasi selesai.")
 
 if __name__ == "__main__":
     main()
+
+# Pastikan import dan path file benar, serta tidak ada error runtime.
