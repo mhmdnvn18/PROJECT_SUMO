@@ -1,37 +1,57 @@
-# NAMA PROYEK ANDA
+# PROJECT_SUMO
 
-## 📖 Deskripsi
-_Tuliskan deskripsi singkat namun jelas tentang proyek Anda di sini. Jelaskan apa tujuan proyek ini, masalah apa yang coba dipecahkan, dan untuk siapa proyek ini dibuat. (Contoh: Aplikasi ini adalah sebuah sistem kasir sederhana untuk UMKM yang membantu mencatat transaksi penjualan dan mengelola stok barang)._
+Kumpulan mini-project dan studi kasus simulasi lalu lintas berbasis SUMO (Simulation of Urban MObility) dan integrasi Python (TraCI, Streamlit, AI/IoT).
+
+## Daftar Sub-Proyek
+
+- **Traffic Signal Optimization using Q-Learning and SUMO**  
+  Optimasi lampu lalu lintas menggunakan Q-Learning dan simulasi SUMO.  
+  [Lihat detail](./Traffic-Signal-Optimization-using-Q-Learning-and-SUMO/README.MD)
+
+- **Smart Parking Finder System**  
+  Sistem pencarian parkir cerdas berbasis simulasi SUMO dan dashboard real-time.  
+  [Lihat detail](./Smart-Parking-Finder-System/README.md)
+
+- **Basic Vehicle Color Animation in SUMO**  
+  Contoh animasi perubahan warna kendaraan di SUMO menggunakan TraCI.  
+  [Lihat detail](./.BACKUP/BASIC/README.MD)
+
+## Fitur Umum
+
+- Simulasi lalu lintas dengan jaringan jalan nyata (OSM/netedit)
+- Kontrol lampu lalu lintas adaptif (rule-based & AI)
+- Analisis hasil simulasi (waktu tempuh, waktu tunggu, visualisasi)
+- Integrasi IoT/AI untuk smart city (parkir, traffic light)
+- Dashboard real-time (Streamlit) & visualisasi peta (Folium)
+
+## Cara Umum Menjalankan
+
+1. **Instalasi SUMO dan Python**  
+   Pastikan SUMO dan Python 3.x sudah terpasang di sistem Anda.
+
+2. **Instalasi Dependensi Python**  
+   Jalankan:
+   ```
+   pip install traci sumolib matplotlib streamlit folium plotly pandas
+   ```
+
+3. **Masuk ke folder sub-proyek**  
+   Ikuti README masing-masing subfolder untuk instruksi detail.
+
+## Struktur Folder
+
+- `Traffic-Signal-Optimization-using-Q-Learning-and-SUMO/`  
+  Studi kasus optimasi lampu lalu lintas (Q-Learning, adaptive, analisis).
+- `Smart-Parking-Finder-System/`  
+  Simulasi dan dashboard sistem parkir cerdas.
+- `.BACKUP/BASIC/`  
+  Contoh animasi warna kendaraan SUMO.
+- File SUMO: `.sumocfg`, `.net.xml`, `.rou.xml`, dll.
+
+## Lisensi
+
+MIT License © 2025 Muhammad Novian
 
 ---
 
-## ✨ Fitur Utama
-* **Fitur 1:** Penjelasan singkat tentang apa yang bisa dilakukan fitur ini.
-* **Fitur 2:** Penjelasan singkat tentang apa yang bisa dilakukan fitur ini.
-* **Fitur 3:** Penjelasan singkat tentang apa yang bisa dilakukan fitur ini.
-* *(Tambahkan atau kurangi sesuai kebutuhan)*
-
----
-
-## 🛠️ Teknologi yang Digunakan
-* **Bahasa Pemrograman:** [Contoh: Python 3.8]
-* **Framework:** [Contoh: Django, Flask, atau tidak ada]
-* **Database:** [Contoh: SQLite, PostgreSQL]
-* **Library Utama:** [Contoh: Pandas, NumPy, OpenCV]
-* *(Tambahkan teknologi lain yang relevan)*
-
----
-
-## 🚀 Instalasi & Persiapan
-Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal Anda.
-
-**1. Prasyarat**
-Pastikan Anda sudah menginstal perangkat lunak berikut:
-* [Contoh: Python 3.8 atau versi lebih baru]
-* [Contoh: Git]
-* *(Lainnya jika ada)*
-
-**2. Clone Repositori**
-```bash
-git clone [https://github.com/mhmdnvn18/PROJECT_SUMO.git](https://github.com/mhmdnvn18/PROJECT_SUMO.git)
-cd PROJECT_SUMO
+> Lihat README di masing-masing subfolder untuk detail penggunaan, dependensi, dan penjelasan tiap studi kasus.
